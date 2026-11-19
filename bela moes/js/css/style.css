@@ -1,0 +1,687 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap');
+
+:root {
+    --papel: #dfcfaa;
+    --papel-claro: #eee2c5;
+    --tinta: #29241c;
+    --marrom: #57432d;
+    --detalhe: #8c7451;
+    --progresso: 0%;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 30px 12px;
+    color: var(--tinta);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    background:
+        radial-gradient(ellipse at 10% 20%, #66503955, transparent 32%),
+        radial-gradient(ellipse at 90% 70%, #66503944, transparent 30%),
+        #8e8068;
+    line-height: 1.85;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    opacity: .16;
+    background-image:
+        radial-gradient(#51402b 0.7px, transparent 0.7px);
+    background-size: 5px 5px;
+}
+
+html::after {
+    content: "";
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: var(--progresso);
+    height: 4px;
+    background: #34281c;
+    transition: width .1s;
+}
+
+.jornal {
+    position: relative;
+    max-width: 1120px;
+    margin: auto;
+    padding: 35px 65px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 3% 7%, #9d80543c, transparent 23%),
+        radial-gradient(ellipse at 95% 40%, #a48b6244, transparent 25%),
+        radial-gradient(ellipse at 40% 100%, #8d70432c, transparent 35%),
+        repeating-linear-gradient(0deg, transparent 0 4px, #715a3610 5px),
+        var(--papel);
+    box-shadow:
+        0 10px 35px #17110b77,
+        inset 0 0 55px #80633a33;
+    border: 1px solid #7c6848;
+}
+
+/* Manchas decorativas nas bordas */
+
+.jornal::before,
+.jornal::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    pointer-events: none;
+    opacity: .25;
+    filter: blur(12px);
+    background: #78552c;
+    border-radius: 48% 52% 70% 30%;
+}
+
+.jornal::before {
+    top: -60px;
+    left: -55px;
+    transform: rotate(30deg);
+}
+
+.jornal::after {
+    bottom: -65px;
+    right: -60px;
+    transform: rotate(-35deg);
+}
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--tinta);
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    text-align: center;
+    padding: 22px 0 18px;
+    border-bottom: 5px double var(--tinta);
+}
+
+.edicao,
+.etiqueta {
+    font-family: 'Old Standard TT', serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cabecalho h1 {
+    margin: 15px 0 0;
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(52px, 9vw, 105px);
+    font-weight: normal;
+    letter-spacing: -3px;
+    line-height: .85;
+    text-shadow: 1px 1px #806b4b;
+}
+
+.cabecalho h1 span {
+    font-size: .82em;
+    letter-spacing: 5px;
+}
+
+.subtitulo {
+    margin: 20px 0 8px;
+    font-family: 'IM Fell English', serif;
+    font-size: 21px;
+    font-style: italic;
+}
+
+.ornamento {
+    margin: 12px 0;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.linha-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid var(--tinta);
+    border-bottom: 1px solid var(--tinta);
+    padding: 8px 0;
+    margin-top: 14px;
+    font-family: 'Old Standard TT', serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+/* MENU */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding: 14px 0;
+    border-bottom: 3px double var(--tinta);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #dfcfaaed;
+    backdrop-filter: blur(8px);
+}
+
+.menu a {
+    color: var(--tinta);
+    text-decoration: none;
+    font-family: 'Old Standard TT', serif;
+    font-size: 12px;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.menu a:hover {
+    color: #9b3824;
+    transform: translateY(-2px);
+}
+
+.menu .menu-quiz {
+    border: 1px solid var(--tinta);
+    padding: 3px 9px;
+    background: #35291d;
+    color: var(--papel-claro);
+}
+
+.menu .menu-quiz:hover {
+    background: transparent;
+    color: var(--tinta);
+}
+
+/* CAPA */
+
+.capa {
+    position: relative;
+    text-align: center;
+    padding: 45px 0 35px;
+    border-bottom: 5px double var(--tinta);
+}
+
+.selo {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    padding: 7px 12px;
+    border: 2px solid #8b3e2c;
+    color: #8b3e2c;
+    font-family: 'Old Standard TT', serif;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 2px;
+    transform: rotate(7deg);
+}
+
+.destaque {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.capa h2 {
+    max-width: 780px;
+    margin: 20px auto;
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(35px, 6vw, 62px);
+    line-height: 1.08;
+    font-weight: normal;
+}
+
+.introducao {
+    max-width: 690px;
+    margin: 20px auto 28px;
+    font-family: 'IM Fell English', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.foto-freud {
+    max-width: 480px;
+    margin: 30px auto;
+    padding: 12px;
+    background: #cbb991;
+    border: 1px solid #60472e;
+    box-shadow: 5px 7px 15px #0005;
+    transform: rotate(-.5deg);
+    transition: .4s;
+}
+
+.foto-freud:hover {
+    transform: rotate(0) scale(1.015);
+}
+
+.foto-freud img {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border: 3px solid #60472e;
+    filter: sepia(35%) grayscale(30%) contrast(110%);
+}
+
+.foto-freud figcaption,
+.foto-materia figcaption {
+    padding: 8px 3px 0;
+    font-family: 'IM Fell English', serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.legenda-capa {
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.manchete-secundaria {
+    max-width: 600px;
+    margin: 35px auto 0;
+    padding: 15px;
+    border-top: 1px solid var(--tinta);
+    border-bottom: 1px solid var(--tinta);
+}
+
+.manchete-secundaria span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.manchete-secundaria strong {
+    display: block;
+    margin: 8px;
+    font-family: 'IM Fell English', serif;
+    font-size: 25px;
+}
+
+/* SUMÁRIO */
+
+.sumario {
+    margin: 40px 0;
+    padding: 25px 35px;
+    border: 2px solid var(--tinta);
+    outline: 1px solid var(--tinta);
+    outline-offset: 5px;
+    background: #eee0bd70;
+}
+
+.sumario h2 {
+    margin: 5px 0 18px;
+    font-family: 'IM Fell English', serif;
+    font-size: 42px;
+}
+
+.sumario ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sumario li {
+    border-bottom: 1px dotted #826c4c;
+}
+
+.sumario li a {
+    display: flex;
+    gap: 15px;
+    padding: 9px 4px;
+    color: var(--tinta);
+    text-decoration: none;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.sumario li a span {
+    font-weight: bold;
+    color: #8b3827;
+}
+
+.sumario li a:hover {
+    padding-left: 13px;
+    background: #a68c6022;
+}
+
+.chamada-quiz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 13px;
+    background: #33291f;
+    color: #e9d8b5;
+    text-decoration: none;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.chamada-quiz:hover {
+    background: #725439;
+    letter-spacing: .4px;
+}
+
+/* MATÉRIAS */
+
+.divisor-editorial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 35px 0;
+    font-family: 'Old Standard TT', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.capitulo {
+    position: relative;
+    padding: 35px 0;
+    border-bottom: 2px solid var(--tinta);
+    scroll-margin-top: 90px;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.capitulo.visivel,
+.sumario.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.capitulo .etiqueta {
+    margin: 0;
+    color: #805e38;
+}
+
+.capitulo h2 {
+    margin: 8px 0 25px;
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.12;
+    text-align: center;
+    border-bottom: 3px double var(--tinta);
+    padding-bottom: 18px;
+}
+
+.capitulo p:not(.etiqueta) {
+    font-size: 13px;
+    line-height: 1.95;
+    text-align: justify;
+    margin: 0 0 17px;
+}
+
+.capitulo h3 {
+    font-family: 'IM Fell English', serif;
+    font-size: 25px;
+    margin: 25px 0 10px;
+}
+
+.capitulo ul {
+    padding-left: 22px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.capitulo li {
+    margin-bottom: 10px;
+}
+
+.capitulo li::marker {
+    color: #8b3827;
+}
+
+/* FOTOGRAFIAS NAS MATÉRIAS */
+
+.foto-materia {
+    width: 220px;
+    margin: 8px 0 18px 25px;
+    padding: 8px;
+    background: #cbb991;
+    border: 1px solid #78603d;
+    box-shadow: 3px 4px 8px #0003;
+}
+
+.foto-materia img {
+    display: block;
+    width: 100%;
+    filter: grayscale(100%) sepia(20%) contrast(110%);
+}
+
+.foto-lateral {
+    float: right;
+}
+
+.foto-pequena {
+    float: left;
+    width: 180px;
+    margin: 8px 22px 12px 0;
+}
+
+/* CARTÕES */
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.cartoes article {
+    position: relative;
+    padding: 20px 15px;
+    border: 1px solid #806747;
+    background: #e4d4b455;
+    text-align: center;
+    transition: .3s;
+}
+
+.cartoes article:hover {
+    background: #d3bd91;
+    transform: translateY(-5px);
+    box-shadow: 4px 6px 12px #0002;
+}
+
+.cartoes article > span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #8b3827;
+}
+
+.cartoes h3 {
+    font-family: 'IM Fell English', serif;
+    margin: 5px 0 10px;
+    font-size: 23px;
+}
+
+.cartoes p {
+    font-size: 12px !important;
+    text-align: center !important;
+    margin: 0 !important;
+}
+
+/* REFERÊNCIAS */
+
+.referencias {
+    background: #cdbb9766;
+    padding: 30px;
+    border: 1px solid #806747;
+}
+
+.referencias p:not(.etiqueta) {
+    text-align: left;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    margin-top: 40px;
+    padding-top: 25px;
+    text-align: center;
+    border-top: 5px double var(--tinta);
+}
+
+.rodape h2 {
+    font-family: 'IM Fell English', serif;
+    font-size: 30px;
+}
+
+.rodape p {
+    font-size: 12px;
+}
+
+.integrantes {
+    margin: 30px auto;
+    padding: 20px;
+    border-top: 1px solid var(--tinta);
+    border-bottom: 1px solid var(--tinta);
+}
+
+.integrantes p:not(.etiqueta) {
+    font-family: 'IM Fell English', serif;
+    font-size: 15px;
+}
+
+.voltar {
+    display: inline-block;
+    margin: 15px;
+    color: var(--tinta);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    color: #9b3824;
+}
+
+.rodape-final {
+    border-top: 1px solid var(--tinta);
+    padding-top: 12px;
+    letter-spacing: 3px;
+}
+
+/* BOTÃO DE VOLTAR */
+
+.botao-topo {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 30;
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #35291e;
+    color: #eee0bd;
+    border: 1px solid #eee0bd;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 3px 10px #0004;
+    transition: .3s;
+}
+
+.botao-topo:hover {
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+    body {
+        padding: 0;
+    }
+
+    .jornal {
+        padding: 20px 19px;
+    }
+
+    .barra-superior {
+        font-size: 8px;
+        letter-spacing: .5px;
+    }
+
+    .linha-cabecalho {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .menu {
+        position: relative;
+        gap: 10px 14px;
+    }
+
+    .selo {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .sumario {
+        padding: 20px;
+    }
+
+    .capitulo p:not(.etiqueta) {
+        text-align: left;
+    }
+
+    .foto-materia,
+    .foto-lateral,
+    .foto-pequena {
+        float: none;
+        display: block;
+        width: min(100%, 270px);
+        margin: 20px auto;
+    }
+
+    .cartoes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .divisor-editorial {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cartoes {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho h1 {
+        font-size: 48px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

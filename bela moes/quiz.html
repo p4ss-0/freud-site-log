@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c8b58f">
+
+    <title>Arquivo de Conhecimento — Freud</title>
+
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+
+    <div class="quiz-pagina">
+
+        <!-- CABEÇALHO -->
+
+        <header class="quiz-cabecalho">
+
+            <a href="index.html" class="voltar-jornal">
+                ← VOLTAR AO JORNAL
+            </a>
+
+            <p>THE FREUD GAZETTE • ARQUIVO INTERATIVO</p>
+
+            <h1>O TESTE DO<br>INCONSCIENTE</h1>
+
+            <div class="linha-ornamental">
+                ✦ ━━━━━━━━━━━━━━━━━ ✦
+            </div>
+
+            <p class="descricao">
+                Uma investigação sobre a vida, as teorias e o legado
+                de Sigmund Freud.
+            </p>
+
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <main class="quiz-conteudo">
+
+            <div class="arquivo-topo">
+                <span>DOCUMENTO Nº 001</span>
+                <span>SEÇÃO DE INVESTIGAÇÃO</span>
+            </div>
+
+            <!-- INTRODUÇÃO -->
+
+            <section class="introducao-quiz" id="introducao">
+
+                <div class="carimbo">
+                    CONFIDENCIAL
+                </div>
+
+                <p class="pequeno-titulo">
+                    ARQUIVO DE CONHECIMENTO
+                </p>
+
+                <h2>Você conhece os mistérios da mente?</h2>
+
+                <p>
+                    Teste seus conhecimentos sobre a psicanálise,
+                    as teorias freudianas e a trajetória de um dos
+                    nomes mais conhecidos da história da Psicologia.
+                </p>
+
+                <div class="informacoes-quiz">
+
+                    <div>
+                        <strong>10</strong>
+                        <span>QUESTÕES</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>NÍVEIS</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>TENTATIVAS</span>
+                    </div>
+
+                </div>
+
+                <button id="iniciar" class="botao-principal">
+                    INICIAR INVESTIGAÇÃO →
+                </button>
+
+                <p class="nota-quiz">
+                    LEIA COM ATENÇÃO • ESCOLHA SUAS RESPOSTAS
+                </p>
+
+            </section>
+
+            <!-- ÁREA DAS PERGUNTAS -->
+
+            <section class="area-perguntas" id="area-perguntas" hidden>
+
+                <div class="progresso-texto">
+                    <span id="numero-questao">QUESTÃO 01 DE 10</span>
+                    <span id="porcentagem">10%</span>
+                </div>
+
+                <div class="barra-progresso">
+                    <div id="barra" class="barra-preenchida"></div>
+                </div>
+
+                <div class="folha-pergunta">
+
+                    <div class="cabecalho-pergunta">
+                        <span>ARQUIVO DE ANÁLISE</span>
+                        <span id="numero-grande">01</span>
+                    </div>
+
+                    <p class="etiqueta-pergunta">
+                        QUESTÃO EM INVESTIGAÇÃO
+                    </p>
+
+                    <h2 id="pergunta-texto"></h2>
+
+                    <p class="instrucao-pergunta">
+                        ANALISE O DOCUMENTO E SELECIONE A ALTERNATIVA CORRETA.
+                    </p>
+
+                    <div id="opcoes" class="opcoes"></div>
+
+                    <p id="aviso" class="aviso" aria-live="polite"></p>
+
+                    <div class="navegacao-quiz">
+
+                        <button id="anterior" class="botao-secundario" hidden>
+                            ← ANTERIOR
+                        </button>
+
+                        <button id="proximo" class="botao-principal">
+                            CONFIRMAR RESPOSTA
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <p class="rodape-pergunta">
+                    THE FREUD GAZETTE • REGISTRO DE INVESTIGAÇÃO
+                </p>
+
+            </section>
+
+            <!-- RESULTADO FINAL -->
+
+            <section id="resultado-final" class="resultado-final" hidden>
+
+                <p class="pequeno-titulo">
+                    RELATÓRIO CONCLUÍDO
+                </p>
+
+                <div class="selo-resultado">
+                    ANÁLISE FINALIZADA
+                </div>
+
+                <h2>Seu resultado</h2>
+
+                <div class="pontuacao">
+
+                    <strong id="pontuacao">0/10</strong>
+
+                    <span>PONTOS CONQUISTADOS</span>
+
+                </div>
+
+                <h3 id="mensagem-final"></h3>
+
+                <p id="descricao-final"></p>
+
+                <div id="revisao" class="revisao"></div>
+
+                <button id="recomecar" class="botao-principal">
+                    ↻ REFAZER INVESTIGAÇÃO
+                </button>
+
+                <a href="index.html" class="link-jornal">
+                    ← RETORNAR À EDIÇÃO PRINCIPAL
+                </a>
+
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+
+        <footer class="quiz-rodape">
+
+          
+
+            <span>FIM DO DOCUMENTO • 1939</span>
+
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/script.js" defer></script>
+
+</body>
+
+</html>
