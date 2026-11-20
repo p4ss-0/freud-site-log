@@ -1,105 +1,77 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#c8b58f">
-
-    <title>Arquivo de Conhecimento — Freud</title>
-
+    <title>The Freud Gazette — O Teste do Inconsciente</title>
     <link rel="stylesheet" href="css/quiz.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
+<div class="quiz-pagina">
 
-    <div class="quiz-pagina">
+    <header class="quiz-cabecalho">
+        <a href="index.html" class="voltar-jornal">← VOLTAR AO JORNAL</a>
+        <p>THE FREUD GAZETTE • ARQUIVO INTERATIVO</p>
+        <h1>O TESTE DO<br>INCONSCIENTE</h1>
+        <div class="linha-ornamental">✦ ━━━━━━━━━━━━━━━━━ ✦</div>
+        <p class="descricao">Uma investigação sobre a vida, as teorias e o legado de Sigmund Freud.</p>
+    </header>
 
-        <!-- CABEÇALHO -->
+    <nav class="navegacao">
+        <button class="aba ativa" data-aba="inicio">INÍCIO</button>
+        <button class="aba" data-aba="ranking">RANKING DIÁRIO</button>
+        <button class="aba" data-aba="historico">HISTÓRICO</button>
+    </nav>
 
-        <header class="quiz-cabecalho">
+    <main class="quiz-conteudo">
 
-            <a href="index.html" class="voltar-jornal">
-                ← VOLTAR AO JORNAL
-            </a>
-
-            <p>THE FREUD GAZETTE • ARQUIVO INTERATIVO</p>
-
-            <h1>O TESTE DO<br>INCONSCIENTE</h1>
-
-            <div class="linha-ornamental">
-                ✦ ━━━━━━━━━━━━━━━━━ ✦
-            </div>
-
-            <p class="descricao">
-                Uma investigação sobre a vida, as teorias e o legado
-                de Sigmund Freud.
-            </p>
-
-        </header>
-
-        <!-- CONTEÚDO PRINCIPAL -->
-
-        <main class="quiz-conteudo">
-
+        <section id="pagina-inicio" class="pagina aba-conteudo ativa">
             <div class="arquivo-topo">
                 <span>DOCUMENTO Nº 001</span>
                 <span>SEÇÃO DE INVESTIGAÇÃO</span>
             </div>
 
-            <!-- INTRODUÇÃO -->
-
             <section class="introducao-quiz" id="introducao">
-
-                <div class="carimbo">
-                    CONFIDENCIAL
-                </div>
-
-                <p class="pequeno-titulo">
-                    ARQUIVO DE CONHECIMENTO
-                </p>
-
+                <div class="carimbo">CONFIDENCIAL</div>
+                <p class="pequeno-titulo">ARQUIVO DE CONHECIMENTO</p>
                 <h2>Você conhece os mistérios da mente?</h2>
-
-                <p>
-                    Teste seus conhecimentos sobre a psicanálise,
-                    as teorias freudianas e a trajetória de um dos
-                    nomes mais conhecidos da história da Psicologia.
-                </p>
+                <p>Teste seus conhecimentos sobre a psicanálise, as teorias freudianas e a trajetória de um dos nomes mais conhecidos da história da Psicologia.</p>
 
                 <div class="informacoes-quiz">
-
-                    <div>
-                        <strong>10</strong>
-                        <span>QUESTÕES</span>
-                    </div>
-
-                    <div>
-                        <strong>03</strong>
-                        <span>NÍVEIS</span>
-                    </div>
-
-                    <div>
-                        <strong>∞</strong>
-                        <span>TENTATIVAS</span>
-                    </div>
-
+                    <div><strong>10</strong><span>QUESTÕES</span></div>
+                    <div><strong>03</strong><span>MODALIDADES</span></div>
+                    <div><strong>∞</strong><span>TENTATIVAS</span></div>
                 </div>
 
-                <button id="iniciar" class="botao-principal">
-                    INICIAR INVESTIGAÇÃO →
-                </button>
+                <div class="configuracao">
+                    <p class="pequeno-titulo">IDENTIFICAÇÃO DOS INVESTIGADORES</p>
 
-                <p class="nota-quiz">
-                    LEIA COM ATENÇÃO • ESCOLHA SUAS RESPOSTAS
-                </p>
+                    <label for="modalidade">MODALIDADE DA INVESTIGAÇÃO</label>
+                    <select id="modalidade">
+                        <option value="Solo">Solo</option>
+                        <option value="Dupla">Dupla</option>
+                        <option value="Equipe">Equipe</option>
+                    </select>
 
+                    <div id="campos-jogadores">
+                        <label for="jogador1">NOME DO JOGADOR</label>
+                        <input id="jogador1" type="text" maxlength="35" placeholder="Digite seu nome">
+                    </div>
+
+                    <button id="iniciar" class="botao-principal">INICIAR INVESTIGAÇÃO →</button>
+                </div>
+
+                <p class="nota-quiz">LEIA COM ATENÇÃO • ESCOLHA SUAS RESPOSTAS</p>
             </section>
 
-            <!-- ÁREA DAS PERGUNTAS -->
-
             <section class="area-perguntas" id="area-perguntas" hidden>
+                <div class="registro-sessao">
+                    <span id="registro-inicio">SESSÃO COMEÇADA —</span>
+                </div>
 
                 <div class="progresso-texto">
                     <span id="numero-questao">QUESTÃO 01 DE 10</span>
@@ -111,102 +83,88 @@
                 </div>
 
                 <div class="folha-pergunta">
-
                     <div class="cabecalho-pergunta">
                         <span>ARQUIVO DE ANÁLISE</span>
                         <span id="numero-grande">01</span>
                     </div>
 
-                    <p class="etiqueta-pergunta">
-                        QUESTÃO EM INVESTIGAÇÃO
-                    </p>
-
+                    <p class="etiqueta-pergunta">QUESTÃO EM INVESTIGAÇÃO</p>
                     <h2 id="pergunta-texto"></h2>
-
-                    <p class="instrucao-pergunta">
-                        ANALISE O DOCUMENTO E SELECIONE A ALTERNATIVA CORRETA.
-                    </p>
+                    <p class="instrucao-pergunta">ANALISE O DOCUMENTO E SELECIONE A ALTERNATIVA CORRETA.</p>
 
                     <div id="opcoes" class="opcoes"></div>
-
                     <p id="aviso" class="aviso" aria-live="polite"></p>
 
                     <div class="navegacao-quiz">
-
-                        <button id="anterior" class="botao-secundario" hidden>
-                            ← ANTERIOR
-                        </button>
-
-                        <button id="proximo" class="botao-principal">
-                            CONFIRMAR RESPOSTA
-                        </button>
-
+                        <button id="anterior" class="botao-secundario" hidden>← ANTERIOR</button>
+                        <button id="proximo" class="botao-principal">CONFIRMAR RESPOSTA</button>
                     </div>
-
                 </div>
 
-                <p class="rodape-pergunta">
-                    THE FREUD GAZETTE • REGISTRO DE INVESTIGAÇÃO
-                </p>
-
+                <p class="rodape-pergunta">THE FREUD GAZETTE • REGISTRO DE INVESTIGAÇÃO</p>
             </section>
 
-            <!-- RESULTADO FINAL -->
-
             <section id="resultado-final" class="resultado-final" hidden>
-
-                <p class="pequeno-titulo">
-                    RELATÓRIO CONCLUÍDO
-                </p>
-
-                <div class="selo-resultado">
-                    ANÁLISE FINALIZADA
-                </div>
-
+                <p class="pequeno-titulo">RELATÓRIO CONCLUÍDO</p>
+                <div class="selo-resultado">ANÁLISE FINALIZADA</div>
                 <h2>Seu resultado</h2>
 
                 <div class="pontuacao">
-
-                    <strong id="pontuacao">0/10</strong>
-
+                    <strong id="pontuacao">0/18</strong>
                     <span>PONTOS CONQUISTADOS</span>
-
                 </div>
 
                 <h3 id="mensagem-final"></h3>
-
                 <p id="descricao-final"></p>
+
+                <div class="dados-sessao">
+                    <p id="horario-inicio"></p>
+                    <p id="horario-fim"></p>
+                    <p id="status-salvamento">SALVANDO RESULTADO...</p>
+                </div>
 
                 <div id="revisao" class="revisao"></div>
 
-                <button id="recomecar" class="botao-principal">
-                    ↻ REFAZER INVESTIGAÇÃO
-                </button>
-
-                <a href="index.html" class="link-jornal">
-                    ← RETORNAR À EDIÇÃO PRINCIPAL
-                </a>
-
+                <button id="recomecar" class="botao-principal">↻ NOVA INVESTIGAÇÃO</button>
+                <a href="index.html" class="link-jornal">← RETORNAR À EDIÇÃO PRINCIPAL</a>
             </section>
+        </section>
 
-        </main>
+        <section id="pagina-ranking" class="pagina aba-conteudo" hidden>
+            <div class="arquivo-topo">
+                <span>DOCUMENTO Nº 002</span>
+                <span>CLASSIFICAÇÃO</span>
+            </div>
 
-        <!-- RODAPÉ -->
+            <section class="painel-lista">
+                <p class="pequeno-titulo">THE FREUD GAZETTE • CLASSIFICAÇÃO</p>
+                <h2>Ranking diário</h2>
+                <p>Os investigadores com as maiores pontuações do dia.</p>
+                <p class="data-atual" id="data-ranking"></p>
+                <div id="lista-ranking" class="lista-registros"></div>
+            </section>
+        </section>
 
-        <footer class="quiz-rodape">
+        <section id="pagina-historico" class="pagina aba-conteudo" hidden>
+            <div class="arquivo-topo">
+                <span>DOCUMENTO Nº 003</span>
+                <span>ARQUIVO PERMANENTE</span>
+            </div>
 
-          
+            <section class="painel-lista">
+                <p class="pequeno-titulo">REGISTRO DE INVESTIGAÇÕES</p>
+                <h2>Histórico de partidas</h2>
+                <p>Todas as investigações concluídas neste navegador.</p>
+                <div id="lista-historico" class="lista-registros"></div>
+            </section>
+        </section>
 
-            <span>FIM DO DOCUMENTO • 1939</span>
+    </main>
 
-        </footer>
-
-    </div>
-
-    <!-- JAVASCRIPT -->
-
-    <script src="js/script.js" defer></script>
-
+    <footer class="quiz-rodape">
+        <span>THE FREUD GAZETTE • FIM DO DOCUMENTO</span>
+        <span>1939</span>
+    </footer>
+</div>
 </body>
-
 </html>
