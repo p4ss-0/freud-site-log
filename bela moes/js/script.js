@@ -1,576 +1,714 @@
 
+// ============================================
+// THE FREUD GAZETTE
+// Quiz com salvamento local (sem banco de dados)
+// ============================================
+
 const perguntas = [
     {
-        pergunta: "1. Freud ficou conhecido principalmente por desenvolver qual abordagem?",
+        pergunta: "Em que ano Sigmund Freud nasceu?",
+        opcoes: ["1846", "1856", "1865", "1872"],
+        correta: 1,
+        explicacao: "Sigmund Freud nasceu em 6 de maio de 1856, na cidade de Freiberg."
+    },
+    {
+        pergunta: "Qual é considerada uma das principais contribuições de Freud para a Psicologia?",
         opcoes: [
-            "O behaviorismo, baseado no comportamento observável.",
-            "A psicanálise, que investiga processos inconscientes e conflitos psíquicos.",
-            "O racionalismo, que considera a razão a principal fonte do conhecimento."
+            "A teoria da evolução",
+            "A criação da psicanálise",
+            "A teoria da relatividade",
+            "O behaviorismo"
         ],
         correta: 1,
-        nivel: "INTRODUTÓRIO",
-        pontos: 1,
-        dica: "Essa abordagem ficou conhecida por investigar desejos, sonhos e conteúdos que não estão conscientes.",
-        explicacao: "Freud desenvolveu a psicanálise, uma abordagem que procura compreender a vida psíquica, incluindo desejos, conflitos e processos inconscientes."
+        explicacao: "Freud desenvolveu a psicanálise, uma abordagem que investiga processos inconscientes."
     },
     {
-        pergunta: "2. Para Freud, por que nem sempre conseguimos explicar nossas próprias atitudes?",
+        pergunta: "Qual destas alternativas representa a estrutura da personalidade proposta por Freud?",
         opcoes: [
-            "Porque algumas motivações podem estar ligadas a processos inconscientes.",
-            "Porque todas as atitudes são determinadas pela inteligência.",
-            "Porque as pessoas não possuem lembranças da infância."
+            "Memória, atenção e percepção",
+            "Id, ego e superego",
+            "Consciência, inteligência e emoção",
+            "Instinto, razão e memória"
         ],
-        correta: 0,
-        nivel: "INTRODUTÓRIO",
-        pontos: 1,
-        dica: "Pense nos conteúdos mentais que influenciam nossas atitudes sem que percebamos diretamente.",
-        explicacao: "Na teoria freudiana, parte das motivações e dos conflitos não está disponível à consciência. Por isso, nem sempre sabemos explicar completamente nossas atitudes."
+        correta: 1,
+        explicacao: "Freud descreveu a personalidade por meio de três instâncias: id, ego e superego."
     },
     {
-        pergunta: "3. Qual alternativa apresenta corretamente as três instâncias da personalidade na segunda tópica de Freud?",
+        pergunta: "O que representa o id na teoria freudiana?",
         opcoes: [
-            "Consciente, memória e imaginação.",
-            "Corpo, mente e sociedade.",
-            "Id, ego e superego."
+            "A parte responsável pelas regras sociais",
+            "A parte que busca satisfazer desejos e impulsos",
+            "A parte responsável pela lógica",
+            "A consciência moral"
+        ],
+        correta: 1,
+        explicacao: "O id está ligado aos impulsos e busca a satisfação imediata dos desejos."
+    },
+    {
+        pergunta: "Qual é a principal função do ego?",
+        opcoes: [
+            "Ignorar a realidade",
+            "Controlar todas as emoções",
+            "Equilibrar os desejos do id com a realidade",
+            "Criar regras morais"
         ],
         correta: 2,
-        nivel: "INTRODUTÓRIO",
-        pontos: 1,
-        dica: "Uma delas representa os desejos, outra tenta equilibrá-los e a terceira envolve regras e ideais.",
-        explicacao: "Freud apresentou o id, o ego e o superego como três instâncias da personalidade. Elas representam diferentes forças que participam dos conflitos psíquicos."
+        explicacao: "O ego tenta equilibrar os desejos do id, as exigências do superego e a realidade."
     },
     {
-        pergunta: "4. Uma pessoa sente muita vontade de comprar algo caro, mas percebe que não tem dinheiro suficiente. Ela decide esperar e planejar melhor. Qual instância aparece principalmente nessa decisão?",
+        pergunta: "O que é o superego?",
         opcoes: [
-            "O id, porque busca satisfação imediata.",
-            "O ego, porque considera a realidade antes de agir.",
-            "O superego, porque representa apenas os desejos."
-        ],
-        correta: 1,
-        nivel: "INTERMEDIÁRIO",
-        pontos: 2,
-        dica: "A instância responsável por lidar com a realidade e tentar equilibrar os desejos é a mesma que ajuda a tomar decisões práticas.",
-        explicacao: "O ego tenta equilibrar os desejos do id, as exigências do superego e as condições da realidade. Nesse exemplo, a pessoa considera suas possibilidades antes de agir."
-    },
-    {
-        pergunta: "5. Uma criança quer pegar um brinquedo de outra pessoa imediatamente, sem pensar nas consequências. Qual instância representa melhor esse impulso?",
-        opcoes: [
-            "O superego.",
-            "O ego.",
-            "O id."
-        ],
-        correta: 2,
-        nivel: "INTERMEDIÁRIO",
-        pontos: 2,
-        dica: "É a instância ligada aos impulsos e à busca por satisfação imediata.",
-        explicacao: "O id é associado aos impulsos e à busca pelo prazer imediato. Ele não considera, por si só, as regras sociais ou as consequências."
-    },
-    {
-        pergunta: "6. Uma pessoa sente culpa por ter feito algo que considera errado, mesmo sem ninguém descobrir. Qual conceito freudiano ajuda a interpretar essa situação?",
-        opcoes: [
-            "Superego, relacionado às regras, proibições e ideais internalizados.",
-            "Id, responsável por obedecer às regras sociais.",
-            "Inconsciente, entendido como a parte que guarda apenas lembranças felizes."
+            "A parte ligada às regras, valores e ideais",
+            "A parte que representa os sonhos",
+            "A parte responsável pelos instintos",
+            "A parte que guarda todas as lembranças"
         ],
         correta: 0,
-        nivel: "INTERMEDIÁRIO",
-        pontos: 2,
-        dica: "Pense na instância que representa valores e regras que a pessoa internalizou.",
-        explicacao: "O superego está relacionado à consciência moral, às proibições e aos ideais que a pessoa desenvolve a partir de sua relação com a família e a sociedade."
+        explicacao: "O superego representa valores, regras e padrões morais que a pessoa internaliza."
     },
     {
-        pergunta: "7. Uma pessoa passa por uma situação muito difícil e começa a agir como se nada tivesse acontecido, evitando reconhecer o que sente. Qual mecanismo de defesa pode estar relacionado a isso?",
+        pergunta: "O que Freud buscava investigar por meio da interpretação dos sonhos?",
         opcoes: [
-            "Projeção.",
-            "Negação.",
-            "Sublimação."
-        ],
-        correta: 1,
-        nivel: "INTERMEDIÁRIO",
-        pontos: 2,
-        dica: "Esse mecanismo acontece quando alguém tem dificuldade de aceitar uma realidade ou sentimento e age como se aquilo não existisse.",
-        explicacao: "A negação é um mecanismo de defesa em que a pessoa evita reconhecer uma realidade dolorosa ou difícil de aceitar. É uma forma de lidar com conflitos e sentimentos."
-    },
-    {
-        pergunta: "8. Uma pessoa sente raiva de alguém, mas não consegue reconhecer esse sentimento. Em vez disso, passa a acreditar que a outra pessoa é quem sente raiva dela. Qual mecanismo de defesa está sendo exemplificado?",
-        opcoes: [
-            "Projeção.",
-            "Repressão.",
-            "Sublimação."
-        ],
-        correta: 0,
-        nivel: "DESAFIADOR",
-        pontos: 3,
-        dica: "O sentimento que a pessoa não reconhece em si mesma é atribuído a outra pessoa.",
-        explicacao: "Na projeção, a pessoa atribui a outra alguém sentimentos, desejos ou características que tem dificuldade de reconhecer em si mesma. É um conceito da teoria psicanalítica."
-    },
-    {
-        pergunta: "9. Na teoria freudiana, uma lembrança que não está presente no pensamento neste momento, mas pode ser trazida à consciência quando alguém tenta recordá-la, pertence a qual sistema?",
-        opcoes: [
-            "Inconsciente.",
-            "Pré-consciente.",
-            "Id."
-        ],
-        correta: 1,
-        nivel: "DESAFIADOR",
-        pontos: 3,
-        dica: "É uma espécie de área intermediária: o conteúdo não está sendo pensado agora, mas pode ser lembrado.",
-        explicacao: "O pré-consciente reúne conteúdos que não estão na consciência naquele momento, mas podem ser acessados com relativa facilidade, como uma lembrança que surge quando tentamos recordá-la."
-    },
-    {
-        pergunta: "10. Uma pessoa transforma impulsos agressivos em energia para praticar um esporte e melhorar seu desempenho. Qual mecanismo de defesa pode explicar esse processo?",
-        opcoes: [
-            "Negação.",
-            "Projeção.",
-            "Sublimação."
+            "A previsão do futuro",
+            "O funcionamento dos músculos",
+            "Desejos e conteúdos inconscientes",
+            "A inteligência matemática"
         ],
         correta: 2,
-        nivel: "DESAFIADOR",
-        pontos: 3,
-        dica: "Esse mecanismo direciona impulsos para atividades consideradas socialmente aceitas ou produtivas.",
-        explicacao: "A sublimação é um mecanismo de defesa em que impulsos são direcionados para atividades socialmente aceitas, como arte, esporte ou trabalho."
+        explicacao: "Freud considerava os sonhos uma via de acesso a conteúdos e desejos inconscientes."
+    },
+    {
+        pergunta: "Qual mecanismo de defesa está relacionado a afastar da consciência pensamentos ou lembranças dolorosas?",
+        opcoes: [
+            "Sublimação",
+            "Repressão",
+            "Projeção",
+            "Negação"
+        ],
+        correta: 1,
+        explicacao: "A repressão é um mecanismo pelo qual conteúdos considerados difíceis são mantidos fora da consciência."
+    },
+    {
+        pergunta: "Na teoria freudiana, o que é a sublimação?",
+        opcoes: [
+            "Transformar impulsos em atividades socialmente aceitas",
+            "Esquecer completamente a infância",
+            "Evitar qualquer tipo de emoção",
+            "Repetir comportamentos sem perceber"
+        ],
+        correta: 0,
+        explicacao: "A sublimação direciona impulsos para atividades consideradas socialmente construtivas."
+    },
+    {
+        pergunta: "Qual é o nome da obra publicada por Freud em 1900, considerada um marco da psicanálise?",
+        opcoes: [
+            "O Mal-Estar na Civilização",
+            "Totem e Tabu",
+            "A Interpretação dos Sonhos",
+            "Além do Princípio do Prazer"
+        ],
+        correta: 2,
+        explicacao: "A Interpretação dos Sonhos foi publicada em 1900 e é uma das obras mais importantes de Freud."
     }
 ];
 
-// ELEMENTOS DA PÁGINA
+// Pontuação: 1 + 1 + 1 + 2 + 2 + 2 + 2 + 3 + 3 + 3 = 20
+const pontosPorQuestao = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3];
 
-const iniciar = document.getElementById("iniciar");
+// ============================================
+// ELEMENTOS DO HTML
+// ============================================
+
 const introducao = document.getElementById("introducao");
 const areaPerguntas = document.getElementById("area-perguntas");
 const resultadoFinal = document.getElementById("resultado-final");
+
+const botaoIniciar = document.getElementById("iniciar");
+const botaoProximo = document.getElementById("proximo");
+const botaoAnterior = document.getElementById("anterior");
+const botaoRecomecar = document.getElementById("recomecar");
+
+const modalidadeInput = document.getElementById("modalidade");
+const camposJogadores = document.getElementById("campos-jogadores");
+
+const perguntaTexto = document.getElementById("pergunta-texto");
+const opcoesContainer = document.getElementById("opcoes");
+const aviso = document.getElementById("aviso");
 
 const numeroQuestao = document.getElementById("numero-questao");
 const numeroGrande = document.getElementById("numero-grande");
 const porcentagem = document.getElementById("porcentagem");
 const barra = document.getElementById("barra");
 
-const perguntaTexto = document.getElementById("pergunta-texto");
-const opcoesContainer = document.getElementById("opcoes");
-const aviso = document.getElementById("aviso");
-
-const anterior = document.getElementById("anterior");
-const proximo = document.getElementById("proximo");
-const recomecar = document.getElementById("recomecar");
-
-const pontuacao = document.getElementById("pontuacao");
+const pontuacaoElemento = document.getElementById("pontuacao");
 const mensagemFinal = document.getElementById("mensagem-final");
 const descricaoFinal = document.getElementById("descricao-final");
 const revisao = document.getElementById("revisao");
 
-// EVITA ERROS NA PÁGINA PRINCIPAL DO JORNAL
+const horarioInicio = document.getElementById("horario-inicio");
+const horarioFim = document.getElementById("horario-fim");
+const registroInicio = document.getElementById("registro-inicio");
+const statusSalvamento = document.getElementById("status-salvamento");
 
-if (
-    iniciar &&
-    introducao &&
-    areaPerguntas &&
-    resultadoFinal &&
-    perguntaTexto &&
-    opcoesContainer &&
-    proximo
-) {
+// ============================================
+// VARIÁVEIS DO QUIZ
+// ============================================
 
-    // ESTADO DO QUIZ
+let questaoAtual = 0;
+let respostas = new Array(perguntas.length).fill(null);
+let inicioPartida = null;
+let partidaFinalizada = false;
+let nomeJogadores = [];
+let modalidadeAtual = "Solo";
 
-    let questaoAtual = 0;
-    let respostas = Array(perguntas.length).fill(null);
-    let confirmadas = Array(perguntas.length).fill(false);
-    let dicasUsadas = Array(perguntas.length).fill(false);
+// ============================================
+// DATA E HORÁRIO
+// ============================================
 
-    // ELEMENTOS EXTRAS CRIADOS PELO JAVASCRIPT
-
-    const estatisticas = document.createElement("div");
-    estatisticas.className = "estatisticas-quiz";
-    estatisticas.innerHTML = `
-        <div>
-            <strong id="pontos-atuais">0</strong>
-            <span>PONTOS</span>
-        </div>
-        <div>
-            <strong id="sequencia-atual">0</strong>
-            <span>SEQUÊNCIA</span>
-        </div>
-        <div>
-            <strong id="nivel-atual">INICIAL</strong>
-            <span>DIFICULDADE</span>
-        </div>
-    `;
-
-    const barraProgresso = document.querySelector(".barra-progresso");
-
-    if (barraProgresso) {
-        barraProgresso.insertAdjacentElement("afterend", estatisticas);
-    }
-
-    const pontosAtuais = estatisticas.querySelector("#pontos-atuais");
-    const sequenciaAtual = estatisticas.querySelector("#sequencia-atual");
-    const nivelAtual = estatisticas.querySelector("#nivel-atual");
-
-    const areaDica = document.createElement("div");
-    areaDica.className = "area-dica";
-
-    const botaoDica = document.createElement("button");
-    botaoDica.type = "button";
-    botaoDica.className = "botao-dica";
-    botaoDica.textContent = "✦ CONSULTAR UMA PISTA";
-
-    const textoDica = document.createElement("p");
-    textoDica.className = "texto-dica";
-    textoDica.hidden = true;
-
-    areaDica.appendChild(botaoDica);
-    areaDica.appendChild(textoDica);
-
-    opcoesContainer.insertAdjacentElement("beforebegin", areaDica);
-
-    const feedback = document.createElement("div");
-    feedback.className = "feedback-resposta";
-    feedback.hidden = true;
-
-    const tituloFeedback = document.createElement("strong");
-    tituloFeedback.className = "titulo-feedback";
-
-    const textoFeedback = document.createElement("p");
-    textoFeedback.className = "texto-feedback";
-
-    const pontosFeedback = document.createElement("span");
-    pontosFeedback.className = "pontos-feedback";
-
-    feedback.appendChild(tituloFeedback);
-    feedback.appendChild(textoFeedback);
-    feedback.appendChild(pontosFeedback);
-
-    opcoesContainer.insertAdjacentElement("afterend", feedback);
-
-    // CALCULAR PONTUAÇÃO
-
-    function calcularPontos() {
-        let total = 0;
-
-        perguntas.forEach((pergunta, indice) => {
-            if (
-                confirmadas[indice] &&
-                respostas[indice] === pergunta.correta
-            ) {
-                total += pergunta.pontos;
-            }
-        });
-
-        return total;
-    }
-
-    // CALCULAR SEQUÊNCIA ATUAL
-
-    function calcularSequencia() {
-        let sequencia = 0;
-
-        for (let i = 0; i < confirmadas.length; i++) {
-            if (
-                confirmadas[i] &&
-                respostas[i] === perguntas[i].correta
-            ) {
-                sequencia++;
-            } else if (confirmadas[i]) {
-                sequencia = 0;
-            }
-        }
-
-        return sequencia;
-    }
-
-    // ATUALIZAR ESTATÍSTICAS
-
-    function atualizarEstatisticas() {
-        pontosAtuais.textContent = calcularPontos();
-        sequenciaAtual.textContent = calcularSequencia();
-
-        const nivel = perguntas[questaoAtual].nivel;
-        nivelAtual.textContent = nivel;
-    }
-
-    // INICIAR QUIZ
-
-    iniciar.addEventListener("click", () => {
-        questaoAtual = 0;
-        respostas = Array(perguntas.length).fill(null);
-        confirmadas = Array(perguntas.length).fill(false);
-        dicasUsadas = Array(perguntas.length).fill(false);
-
-        introducao.hidden = true;
-        resultadoFinal.hidden = true;
-        areaPerguntas.hidden = false;
-
-        mostrarPergunta();
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
+function dataHoraAtual() {
+    return new Date().toLocaleString("pt-BR", {
+        timeZone: "America/Sao_Paulo",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
     });
+}
 
-    // MOSTRAR PERGUNTA
+function dataBrasilia() {
+    return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "America/Sao_Paulo",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+    }).format(new Date());
+}
 
-    function mostrarPergunta() {
-        const pergunta = perguntas[questaoAtual];
+// ============================================
+// IDENTIFICAÇÃO DOS JOGADORES
+// ============================================
 
-        const numero = questaoAtual + 1;
-        const progresso = (numero / perguntas.length) * 100;
+function atualizarCamposJogadores() {
+    const modalidade = modalidadeInput.value;
 
-        numeroQuestao.textContent =
-            `QUESTÃO ${String(numero).padStart(2, "0")} DE ${perguntas.length}`;
+    camposJogadores.innerHTML = "";
 
-        numeroGrande.textContent = String(numero).padStart(2, "0");
-        porcentagem.textContent = `${Math.round(progresso)}%`;
-        barra.style.width = `${progresso}%`;
-
-        perguntaTexto.textContent = pergunta.pergunta;
-
-        opcoesContainer.innerHTML = "";
-        aviso.textContent = "";
-
-        // ATUALIZAR DICA
-
-        textoDica.textContent = pergunta.dica;
-        textoDica.hidden = !dicasUsadas[questaoAtual];
-
-        botaoDica.hidden = confirmadas[questaoAtual];
-        botaoDica.textContent = dicasUsadas[questaoAtual]
-            ? "✦ PISTA CONSULTADA"
-            : "✦ CONSULTAR UMA PISTA";
-
-        // MOSTRAR OPÇÕES
-
-        pergunta.opcoes.forEach((opcao, indice) => {
-            const label = document.createElement("label");
-            label.className = "opcao";
-
-            if (respostas[questaoAtual] === indice) {
-                label.classList.add("selecionada");
-            }
-
-            const letra = document.createElement("span");
-            letra.className = "letra-opcao";
-            letra.textContent = String.fromCharCode(65 + indice);
-
-            const radio = document.createElement("input");
-            radio.type = "radio";
-            radio.name = "resposta";
-            radio.value = indice;
-            radio.checked = respostas[questaoAtual] === indice;
-            radio.disabled = confirmadas[questaoAtual];
-
-            radio.addEventListener("change", () => {
-                if (confirmadas[questaoAtual]) return;
-
-                respostas[questaoAtual] = indice;
-
-                document.querySelectorAll(".opcao").forEach(item => {
-                    item.classList.remove("selecionada");
-                });
-
-                label.classList.add("selecionada");
-                aviso.textContent = "Resposta registrada. Confirme para descobrir o resultado.";
-            });
-
-            label.appendChild(radio);
-            label.appendChild(letra);
-            label.appendChild(document.createTextNode(opcao));
-
-            opcoesContainer.appendChild(label);
-        });
-
-        // FEEDBACK DE QUESTÃO JÁ RESPONDIDA
-
-        feedback.hidden = !confirmadas[questaoAtual];
-
-        if (confirmadas[questaoAtual]) {
-            mostrarFeedback();
-        }
-
-        anterior.hidden = questaoAtual === 0;
-
-        proximo.textContent = confirmadas[questaoAtual]
-            ? (questaoAtual === perguntas.length - 1
-                ? "VER RESULTADO FINAL →"
-                : "CONTINUAR →")
-            : "CONFIRMAR RESPOSTA";
-
-        atualizarEstatisticas();
+    if (modalidade === "Solo") {
+        criarCampo("jogador1", "NOME DO JOGADOR", "Digite seu nome");
     }
 
-    // MOSTRAR FEEDBACK
-
-    function mostrarFeedback() {
-        const pergunta = perguntas[questaoAtual];
-        const acertou = respostas[questaoAtual] === pergunta.correta;
-
-        feedback.hidden = false;
-        feedback.classList.remove("feedback-certo", "feedback-errado");
-
-        if (acertou) {
-            feedback.classList.add("feedback-certo");
-            tituloFeedback.textContent = "✓ RESPOSTA CORRETA!";
-            pontosFeedback.textContent = `+${pergunta.pontos} PONTO${pergunta.pontos > 1 ? "S" : ""}`;
-        } else {
-            feedback.classList.add("feedback-errado");
-            tituloFeedback.textContent = "✕ RESPOSTA INCORRETA";
-            pontosFeedback.textContent = "NENHUM PONTO NESTA QUESTÃO";
-        }
-
-        textoFeedback.textContent = pergunta.explicacao;
+    if (modalidade === "Dupla") {
+        criarCampo("jogador1", "NOME DO PRIMEIRO JOGADOR", "Nome do primeiro jogador");
+        criarCampo("jogador2", "NOME DO SEGUNDO JOGADOR", "Nome do segundo jogador");
     }
 
-    // CONSULTAR DICA
+    if (modalidade === "Equipe") {
+        criarCampo("jogador1", "NOME DA EQUIPE", "Digite o nome da equipe");
+        criarCampo("jogador2", "INTEGRANTES (OPCIONAL)", "Ex.: Ana, Pedro e Lucas");
+    }
+}
 
-    botaoDica.addEventListener("click", () => {
-        dicasUsadas[questaoAtual] = true;
-        textoDica.textContent = perguntas[questaoAtual].dica;
-        textoDica.hidden = false;
-        botaoDica.textContent = "✦ PISTA CONSULTADA";
-    });
+function criarCampo(id, texto, placeholder) {
+    const label = document.createElement("label");
+    label.htmlFor = id;
+    label.textContent = texto;
 
-    // VOLTAR
+    const input = document.createElement("input");
+    input.id = id;
+    input.type = "text";
+    input.maxLength = 100;
+    input.placeholder = placeholder;
 
-    anterior.addEventListener("click", () => {
-        if (questaoAtual > 0) {
-            questaoAtual--;
-            mostrarPergunta();
-        }
-    });
+    camposJogadores.appendChild(label);
+    camposJogadores.appendChild(input);
+}
 
-    // CONFIRMAR E AVANÇAR
+modalidadeInput.addEventListener("change", atualizarCamposJogadores);
 
-    proximo.addEventListener("click", () => {
+// ============================================
+// COMEÇAR PARTIDA
+// ============================================
 
-        // PRIMEIRO CLIQUE: CONFIRMA A RESPOSTA
+function iniciarQuiz() {
+    modalidadeAtual = modalidadeInput.value;
 
-        if (!confirmadas[questaoAtual]) {
-            if (respostas[questaoAtual] === null) {
-                aviso.textContent = "Selecione uma alternativa antes de continuar.";
-                return;
-            }
+    const primeiro = document.getElementById("jogador1")?.value.trim();
 
-            confirmadas[questaoAtual] = true;
+    if (!primeiro) {
+        alert("Por favor, informe o nome do jogador ou da equipe.");
+        return;
+    }
 
-            mostrarFeedback();
-            atualizarEstatisticas();
+    nomeJogadores = [primeiro];
 
-            document.querySelectorAll(".opcao input").forEach(input => {
-                input.disabled = true;
-            });
+    if (modalidadeAtual === "Dupla") {
+        const segundo = document.getElementById("jogador2").value.trim();
 
-            botaoDica.hidden = true;
-
-            proximo.textContent =
-                questaoAtual === perguntas.length - 1
-                    ? "VER RESULTADO FINAL →"
-                    : "CONTINUAR →";
-
-            aviso.textContent = "Resposta confirmada. Leia a explicação antes de avançar.";
-
+        if (!segundo) {
+            alert("Informe o nome dos dois jogadores.");
             return;
         }
 
-        // SEGUNDO CLIQUE: AVANÇA
+        nomeJogadores.push(segundo);
+    }
 
-        if (questaoAtual < perguntas.length - 1) {
-            questaoAtual++;
-            mostrarPergunta();
-        } else {
-            finalizarQuiz();
+    if (modalidadeAtual === "Equipe") {
+        const integrantes = document.getElementById("jogador2").value.trim();
+
+        if (integrantes) {
+            nomeJogadores.push(integrantes);
+        }
+    }
+
+    questaoAtual = 0;
+    respostas = new Array(perguntas.length).fill(null);
+    inicioPartida = new Date();
+    partidaFinalizada = false;
+
+    introducao.hidden = true;
+    resultadoFinal.hidden = true;
+    areaPerguntas.hidden = false;
+
+    registroInicio.textContent = "SESSÃO COMEÇADA " + dataHoraAtual();
+
+    renderizarPergunta();
+}
+
+// ============================================
+// MOSTRAR PERGUNTA
+// ============================================
+
+function renderizarPergunta() {
+    const pergunta = perguntas[questaoAtual];
+
+    perguntaTexto.textContent = pergunta.pergunta;
+
+    numeroQuestao.textContent =
+        `QUESTÃO ${String(questaoAtual + 1).padStart(2, "0")} DE ${perguntas.length}`;
+
+    numeroGrande.textContent =
+        String(questaoAtual + 1).padStart(2, "0");
+
+    const progresso = ((questaoAtual + 1) / perguntas.length) * 100;
+
+    porcentagem.textContent = `${progresso}%`;
+    barra.style.width = `${progresso}%`;
+
+    opcoesContainer.innerHTML = "";
+    aviso.textContent = "";
+
+    pergunta.opcoes.forEach((opcao, indice) => {
+        const label = document.createElement("label");
+        label.className = "opcao";
+
+        if (respostas[questaoAtual] === indice) {
+            label.classList.add("selecionada");
+        }
+
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "resposta";
+        radio.value = indice;
+        radio.checked = respostas[questaoAtual] === indice;
+
+        radio.addEventListener("change", () => {
+            respostas[questaoAtual] = indice;
+
+            document.querySelectorAll(".opcao").forEach(item => {
+                item.classList.remove("selecionada");
+            });
+
+            label.classList.add("selecionada");
+        });
+
+        const texto = document.createElement("span");
+        texto.textContent = opcao;
+
+        label.appendChild(radio);
+        label.appendChild(texto);
+
+        opcoesContainer.appendChild(label);
+    });
+
+    botaoAnterior.hidden = questaoAtual === 0;
+
+    botaoProximo.textContent =
+        questaoAtual === perguntas.length - 1
+            ? "FINALIZAR INVESTIGAÇÃO"
+            : "CONFIRMAR RESPOSTA →";
+}
+
+// ============================================
+// NAVEGAÇÃO ENTRE PERGUNTAS
+// ============================================
+
+function proximaQuestao() {
+    if (respostas[questaoAtual] === null) {
+        aviso.textContent = "Selecione uma alternativa antes de continuar.";
+        return;
+    }
+
+    if (questaoAtual < perguntas.length - 1) {
+        questaoAtual++;
+        renderizarPergunta();
+    } else {
+        finalizarQuiz();
+    }
+}
+
+function questaoAnterior() {
+    if (questaoAtual > 0) {
+        questaoAtual--;
+        renderizarPergunta();
+    }
+}
+
+// ============================================
+// CALCULAR PONTUAÇÃO
+// ============================================
+
+function calcularPontuacao() {
+    let pontos = 0;
+    let acertos = 0;
+
+    perguntas.forEach((pergunta, indice) => {
+        if (respostas[indice] === pergunta.correta) {
+            pontos += pontosPorQuestao[indice];
+            acertos++;
         }
     });
 
-    // FINALIZAR QUIZ
+    return { pontos, acertos };
+}
 
-    function finalizarQuiz() {
-        const pontos = calcularPontos();
-        const totalPossivel = perguntas.reduce(
-            (total, pergunta) => total + pergunta.pontos,
-            0
-        );
+// ============================================
+// SALVAR PARTIDAS NO NAVEGADOR
+// ============================================
 
-        areaPerguntas.hidden = true;
-        resultadoFinal.hidden = false;
+function obterPartidas() {
+    try {
+        return JSON.parse(localStorage.getItem("freudPartidas")) || [];
+    } catch (erro) {
+        console.error("Erro ao ler partidas:", erro);
+        return [];
+    }
+}
 
-        pontuacao.textContent = `${pontos}/${totalPossivel}`;
+function salvarPartidas(partidas) {
+    localStorage.setItem("freudPartidas", JSON.stringify(partidas));
+}
 
-        if (pontos >= 18) {
-            mensagemFinal.textContent = "Uma mente extraordinária!";
-            descricaoFinal.textContent =
-                "Impressionante! Você conseguiu interpretar conceitos importantes da psicanálise e demonstrou um excelente domínio do assunto.";
-        } else if (pontos >= 14) {
-            mensagemFinal.textContent = "Investigação brilhante!";
-            descricaoFinal.textContent =
-                "Muito bem! Você compreendeu boa parte das ideias de Freud e conseguiu resolver questões desafiadoras.";
-        } else if (pontos >= 9) {
-            mensagemFinal.textContent = "O mistério está sendo revelado!";
-            descricaoFinal.textContent =
-                "Você já conhece conceitos importantes, mas ainda pode aprofundar seu entendimento. Leia as explicações da revisão.";
-        } else {
-            mensagemFinal.textContent = "O arquivo ainda guarda segredos!";
-            descricaoFinal.textContent =
-                "Não desanime! A psicanálise tem conceitos complexos. Use a revisão para aprender e tente novamente.";
-        }
+function salvarPartida(partida) {
+    try {
+        const partidas = obterPartidas();
 
-        mostrarRevisao();
+        partidas.push(partida);
 
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        salvarPartidas(partidas);
+
+        statusSalvamento.textContent =
+            "✓ INVESTIGAÇÃO REGISTRADA COM SUCESSO.";
+
+        return true;
+    } catch (erro) {
+        console.error("Erro ao salvar:", erro);
+
+        statusSalvamento.textContent =
+            "Não foi possível salvar neste navegador.";
+
+        return false;
+    }
+}
+
+// ============================================
+// FINALIZAR QUIZ
+// ============================================
+
+function finalizarQuiz() {
+    if (partidaFinalizada) return;
+
+    partidaFinalizada = true;
+
+    const resultado = calcularPontuacao();
+    const fimPartida = new Date();
+
+    const nomePrincipal = nomeJogadores[0];
+
+    const partida = {
+        nome: nomePrincipal,
+        modalidade: modalidadeAtual,
+        integrantes: nomeJogadores,
+        pontos: resultado.pontos,
+        acertos: resultado.acertos,
+        totalQuestoes: perguntas.length,
+        inicio: inicioPartida.toISOString(),
+        fim: fimPartida.toISOString(),
+        dataRanking: dataBrasilia(),
+        respostas: respostas
+    };
+
+    pontuacaoElemento.textContent = `${resultado.pontos}/20`;
+
+    if (resultado.pontos >= 17) {
+        mensagemFinal.textContent = "Uma mente extraordinária!";
+        descricaoFinal.textContent =
+            "Seu conhecimento sobre Freud e a psicanálise é impressionante.";
+    } else if (resultado.pontos >= 11) {
+        mensagemFinal.textContent = "Uma boa investigação!";
+        descricaoFinal.textContent =
+            "Você demonstrou conhecer bastante sobre o pensamento freudiano.";
+    } else if (resultado.pontos >= 6) {
+        mensagemFinal.textContent = "Há muito a descobrir.";
+        descricaoFinal.textContent =
+            "Sua investigação foi iniciada, mas ainda existem mistérios a desvendar.";
+    } else {
+        mensagemFinal.textContent = "O inconsciente ainda guarda mistérios.";
+        descricaoFinal.textContent =
+            "Continue estudando e tente novamente. Cada investigação é uma oportunidade de aprender.";
     }
 
-    // REVISÃO DAS RESPOSTAS
+    horarioInicio.textContent = "SESSÃO COMEÇADA: " + formatarData(inicioPartida);
+    horarioFim.textContent = "SESSÃO ENCERRADA: " + formatarData(fimPartida);
 
-    function mostrarRevisao() {
-        revisao.innerHTML = "<h3>RELATÓRIO DAS RESPOSTAS</h3>";
+    statusSalvamento.textContent = "SALVANDO RESULTADO...";
 
-        perguntas.forEach((pergunta, indice) => {
-            const acertou = respostas[indice] === pergunta.correta;
+    const salvou = salvarPartida(partida);
 
-            const bloco = document.createElement("div");
-            bloco.className = acertou
-                ? "item-revisao certo"
-                : "item-revisao errado";
+    montarRevisao();
 
-            const titulo = document.createElement("strong");
-            titulo.textContent =
-                `${acertou ? "✓" : "✕"} ${pergunta.pergunta}`;
+    areaPerguntas.hidden = true;
+    resultadoFinal.hidden = false;
 
-            const respostaDada = document.createElement("p");
-            respostaDada.textContent =
-                "Sua resposta: " +
-                (respostas[indice] !== null
-                    ? pergunta.opcoes[respostas[indice]]
-                    : "Não respondida");
-
-            const respostaCorreta = document.createElement("p");
-            respostaCorreta.textContent =
-                "Resposta correta: " + pergunta.opcoes[pergunta.correta];
-
-            const explicacao = document.createElement("p");
-            explicacao.textContent = "Análise: " + pergunta.explicacao;
-
-            const dificuldade = document.createElement("p");
-            dificuldade.textContent =
-                `Dificuldade: ${pergunta.nivel} • Valor: ${pergunta.pontos} ponto${pergunta.pontos > 1 ? "s" : ""}`;
-
-            bloco.appendChild(titulo);
-            bloco.appendChild(respostaDada);
-            bloco.appendChild(respostaCorreta);
-            bloco.appendChild(explicacao);
-            bloco.appendChild(dificuldade);
-
-            revisao.appendChild(bloco);
-        });
+    if (salvou) {
+        carregarRanking();
+        carregarHistorico();
     }
+}
 
-    // RECOMEÇAR
+// ============================================
+// FORMATAR DATA
+// ============================================
 
-    recomecar.addEventListener("click", () => {
-        questaoAtual = 0;
-        respostas = Array(perguntas.length).fill(null);
-        confirmadas = Array(perguntas.length).fill(false);
-        dicasUsadas = Array(perguntas.length).fill(false);
-
-        resultadoFinal.hidden = true;
-        introducao.hidden = false;
-        areaPerguntas.hidden = true;
-
-        window.scrollTo({ top: 0, behavior: "smooth" });
+function formatarData(data) {
+    return new Date(data).toLocaleString("pt-BR", {
+        timeZone: "America/Sao_Paulo",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
     });
 }
+
+// ============================================
+// REVISÃO DAS RESPOSTAS
+// ============================================
+
+function montarRevisao() {
+    revisao.innerHTML = "";
+
+    perguntas.forEach((pergunta, indice) => {
+        const acertou = respostas[indice] === pergunta.correta;
+
+        const item = document.createElement("div");
+        item.className = "item-revisao";
+
+        const titulo = document.createElement("strong");
+        titulo.textContent =
+            `${indice + 1}. ${pergunta.pergunta}`;
+
+        const resultado = document.createElement("p");
+        resultado.textContent = acertou
+            ? "✓ Resposta correta"
+            : "✗ Resposta incorreta";
+
+        const respostaCorreta = document.createElement("p");
+        respostaCorreta.textContent =
+            "Resposta correta: " + pergunta.opcoes[pergunta.correta];
+
+        const explicacao = document.createElement("p");
+        explicacao.textContent = pergunta.explicacao;
+
+        item.appendChild(titulo);
+        item.appendChild(resultado);
+
+        if (!acertou) {
+            item.appendChild(respostaCorreta);
+        }
+
+        item.appendChild(explicacao);
+        revisao.appendChild(item);
+    });
+}
+
+// ============================================
+// RANKING DIÁRIO
+// ============================================
+
+function carregarRanking() {
+    const lista = document.getElementById("lista-ranking");
+    const dataElemento = document.getElementById("data-ranking");
+
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    const hoje = dataBrasilia();
+
+    dataElemento.textContent =
+        "CLASSIFICAÇÃO DE " + new Date().toLocaleDateString("pt-BR", {
+            timeZone: "America/Sao_Paulo"
+        });
+
+    const partidasDoDia = obterPartidas()
+        .filter(partida => partida.dataRanking === hoje)
+        .sort((a, b) => b.pontos - a.pontos);
+
+    if (partidasDoDia.length === 0) {
+        mostrarVazio(lista, "Nenhuma investigação registrada hoje.");
+        return;
+    }
+
+    partidasDoDia.forEach((partida, indice) => {
+        const item = document.createElement("div");
+        item.className = "registro-item";
+
+        const nome = document.createElement("span");
+        nome.textContent =
+            `${indice + 1}º — ${partida.nome} (${partida.modalidade})`;
+
+        const pontos = document.createElement("strong");
+        pontos.textContent = `${partida.pontos}/20 pontos`;
+
+        item.appendChild(nome);
+        item.appendChild(pontos);
+        lista.appendChild(item);
+    });
+}
+
+// ============================================
+// HISTÓRICO DE PARTIDAS
+// ============================================
+
+function carregarHistorico() {
+    const lista = document.getElementById("lista-historico");
+
+    if (!lista) return;
+
+    lista.innerHTML = "";
+
+    const partidas = obterPartidas().slice().reverse();
+
+    if (partidas.length === 0) {
+        mostrarVazio(lista, "Ainda não existem partidas registradas.");
+        return;
+    }
+
+    partidas.forEach(partida => {
+        const item = document.createElement("div");
+        item.className = "registro-item";
+
+        const informacoes = document.createElement("div");
+
+        const nome = document.createElement("strong");
+        nome.textContent = partida.nome;
+
+        const detalhes = document.createElement("div");
+        detalhes.textContent =
+            `${partida.modalidade} • ${partida.acertos}/${partida.totalQuestoes} acertos`;
+
+        const data = document.createElement("div");
+        data.textContent = partida.fim
+            ? formatarData(partida.fim)
+            : "Data não disponível";
+
+        informacoes.appendChild(nome);
+        informacoes.appendChild(detalhes);
+        informacoes.appendChild(data);
+
+        const pontos = document.createElement("strong");
+        pontos.textContent = `${partida.pontos}/20`;
+
+        item.appendChild(informacoes);
+        item.appendChild(pontos);
+
+        lista.appendChild(item);
+    });
+}
+
+function mostrarVazio(elemento, mensagem) {
+    const texto = document.createElement("p");
+    texto.className = "registro-vazio";
+    texto.textContent = mensagem;
+    elemento.appendChild(texto);
+}
+
+// ============================================
+// ABAS DE NAVEGAÇÃO
+// ============================================
+
+function abrirAba(nome) {
+    document.querySelectorAll(".aba").forEach(botao => {
+        botao.classList.toggle(
+            "ativa",
+            botao.dataset.aba === nome
+        );
+    });
+
+    document.querySelectorAll(".aba-conteudo").forEach(pagina => {
+        pagina.hidden = pagina.id !== `pagina-${nome}`;
+        pagina.classList.toggle(
+            "ativa",
+            pagina.id === `pagina-${nome}`
+        );
+    });
+
+    if (nome === "ranking") {
+        carregarRanking();
+    }
+
+    if (nome === "historico") {
+        carregarHistorico();
+    }
+}
+
+document.querySelectorAll(".aba").forEach(botao => {
+    botao.addEventListener("click", () => {
+        abrirAba(botao.dataset.aba);
+    });
+});
+
+// ============================================
+// NOVA INVESTIGAÇÃO
+// ============================================
+
+function recomecarQuiz() {
+    questaoAtual = 0;
+    respostas = new Array(perguntas.length).fill(null);
+    inicioPartida = null;
+    partidaFinalizada = false;
+
+    resultadoFinal.hidden = true;
+    areaPerguntas.hidden = true;
+    introducao.hidden = false;
+
+    abrirAba("inicio");
+}
+
+// ============================================
+// EVENTOS DOS BOTÕES
+// ============================================
+
+botaoIniciar.addEventListener("click", iniciarQuiz);
+botaoProximo.addEventListener("click", proximaQuestao);
+botaoAnterior.addEventListener("click", questaoAnterior);
+botaoRecomecar.addEventListener("click", recomecarQuiz);
+
+// ============================================
+// INICIALIZAÇÃO
+// ============================================
+
+atualizarCamposJogadores();
+carregarRanking();
+carregarHistorico();
